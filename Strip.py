@@ -1,19 +1,19 @@
 import re
 
-def StringStrip(PassedString, *args):
+def StringStrip(PassedString, **kwargs):
     ReturnString = ''
-    if(args == ()):
+    if 'arg' in kwargs: 
+        StringArgs = re.compile(kwargs['arg'])
+        ReturnString = StringArgs.sub('',PassedString)
+        return ReturnString
+    else:
         NoArgs = re.compile(r'\S+')
         for string in(NoArgs.findall(PassedString)):
             ReturnString += string
         return ReturnString
-    else:
-        print(PassedString)
-        StringArgs = re.compile(args[0])
-        test = StringArgs.sub('',PassedString)
-        return ReturnString
+   
       
 
 
-StringStrip('Alexander Reno test test Alexander Reno is testing this test', 'test')
+StringStrip('Alexander Reno test test Alexander Reno is testing this test', arg='test')
 StringStrip('test2')
