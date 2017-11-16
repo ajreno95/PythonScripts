@@ -13,7 +13,12 @@ def StringStrip(PassedString, **kwargs):
         return ReturnString
    
       
-
-
-StringStrip('Alexander Reno test test Alexander Reno is testing this test', arg='test')
-StringStrip('test2')
+TestString1 = 'Alexander Reno test test Alexander Reno is testing this test'
+TestString2  = '   test     '
+test1 = StringStrip(TestString1, arg='test')
+test2 = StringStrip(TestString2)
+print('before:\t{}'.format(TestString1))
+print('strip:\ttest')
+print('after:\t{}\n'.format(test1))
+print('before: {}'.format(TestString2))
+print('after:\t{}'.format(test2))
