@@ -1,4 +1,4 @@
-import re, sys
+import re
 
 #Open text file and read it into Text
 textFile = open('test.txt')
